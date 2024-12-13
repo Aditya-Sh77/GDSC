@@ -29,7 +29,20 @@ model.fit(X_train, y_train)
 # Evaluate
 y_pred = model.predict(X_test)
 rmse = root_mean_squared_error(y_test, y_pred)
-print(f"RMSE: {rmse}")
+print(f"RMSE with all features without parameter tuning: {rmse}")
+
+
+
+# Training with tuning parameters
+# Train Decision Tree Regressor
+model = DecisionTreeRegressor(max_depth=10, min_samples_split=5, min_samples_leaf=2, max_features='sqrt', random_state=42)
+model.fit(X_train, y_train)
+
+# Evaluate
+y_pred = model.predict(X_test)
+rmse = root_mean_squared_error(y_test, y_pred)
+print(f"RMSE with all features with parameter tuning: {rmse}")
+
 
 
 
@@ -56,13 +69,13 @@ model.fit(X_train, y_train)
 # Evaluate
 y_pred = model.predict(X_test)
 rmse = root_mean_squared_error(y_test, y_pred)
-print(f"RMSE: {rmse}")
+print(f"RMSE after removing least significant features: {rmse}")
 
 
 
 # Training with top 10 important features
 # Get the top 10 contributors
-top_10_features = feature_importance_df.head(10)
+top_10_features = feature_importance_df.head(15)
 
 # Create a new DataFrame with only the top 10 features
 X_top_10 = data[top_10_features['Feature'].values]
@@ -83,6 +96,6 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 rmse = root_mean_squared_error(y_test, y_pred)
 
-print(f"RMSE with top 10 features: {rmse}")
+print(f"RMSE with top 15 features: {rmse}")
 
 
