@@ -21,6 +21,8 @@ Feature Importance Analysis: The importance of each feature in the model's predi
 Re-Training Model with Top-10 Performance features: Model is re-trained withremoving least significant features only top 10 features which gave almost equal performance metric (RMSE).
 
 # CHALLENGES
-1.) The dataset included 33 features and less than 400 entries.
-2.) Many of these featues were categorical which needed to be converted into numerical categories for training.
+1.) The dataset included 33 features and less than 400 entries.  
+
+2.) Many of these featues were categorical which needed to be converted into numerical categories for training.  
+
 3.) Hyperparameter tuning on more features improved the performance but reduced the performance metric for lesser features.
