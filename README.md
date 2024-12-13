@@ -18,7 +18,7 @@ Hyperparameter tuning improved the performace significantly.
 
 Feature Importance Analysis: The importance of each feature in the model's predictions is analyzed to identify key factors influencing student performance.
 
-Re-Training Model with Top-10 Performance features: Model is re-trained withremoving least significant features only top 10 features which gave almost equal performance metric (RMSE).
+Re-Training Model with Top-15 Performance features: Model is re-trained withremoving least significant features only top 10 features which gave almost equal performance metric (RMSE).
 
 # CHALLENGES
 1.) The dataset included 33 features and less than 400 entries.  
